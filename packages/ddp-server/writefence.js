@@ -1,5 +1,4 @@
-var path = Npm.require('path');
-var Future = Npm.require(path.join('fibers', 'future'));
+var Future = Npm.require('fibers/future');
 
 // A write fence collects a group of writes, and provides a callback
 // when all of the writes are fully committed and propagated (all
@@ -100,7 +99,7 @@ _.extend(DDPServer._WriteFence.prototype, {
         try {
           func(self);
         } catch (err) {
-          Meteor._debug("exception in write fence callback:", err);
+          Meteor._debug("exception in write fence callback", err);
         }
       }
 

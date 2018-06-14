@@ -1,24 +1,20 @@
 {
+  "lockfileVersion": 1,
   "dependencies": {
     "acorn": {
-      "version": "4.0.11",
-      "resolved": "https://registry.npmjs.org/acorn/-/acorn-4.0.11.tgz",
-      "from": "acorn@>=4.0.5 <4.1.0"
-    },
-    "magic-string": {
-      "version": "0.19.0",
-      "resolved": "https://registry.npmjs.org/magic-string/-/magic-string-0.19.0.tgz",
-      "from": "magic-string@>=0.19.0 <0.20.0"
+      "version": "5.5.3",
+      "resolved": "https://registry.npmjs.org/acorn/-/acorn-5.5.3.tgz",
+      "integrity": "sha512-jd5MkIUlbbmb07nXH0DT3y7rDVtkzDi4XZOUVWAer8ajmF/DTSSbl5oNFyDOl/OXA33Bl79+ypHhl2pN20VeOQ=="
     },
     "reify": {
-      "version": "0.6.6",
-      "resolved": "https://registry.npmjs.org/reify/-/reify-0.6.6.tgz",
-      "from": "reify@0.6.6"
+      "version": "0.16.2",
+      "resolved": "https://registry.npmjs.org/reify/-/reify-0.16.2.tgz",
+      "integrity": "sha512-9kL/IYcFiBbwpQFScNcFBJ5zhCEJTNujeDEEv5SoSg5er0V5CDbef2zNEk9FBeI9oehGOG5zM4APXgp5n3Llbw=="
     },
-    "vlq": {
-      "version": "0.2.1",
-      "resolved": "https://registry.npmjs.org/vlq/-/vlq-0.2.1.tgz",
-      "from": "vlq@>=0.2.1 <0.3.0"
+    "semver": {
+      "version": "5.5.0",
+      "resolved": "https://registry.npmjs.org/semver/-/semver-5.5.0.tgz",
+      "integrity": "sha512-4SJ3dm0WAwWy/NVeioZh5AntkdJoWKxHxcmyP622fOkgHa4z3R0TdBJICINyaSDE6uNwVc8gZr+ZinwZAH4xIA=="
     }
   }
 }

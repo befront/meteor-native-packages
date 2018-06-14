@@ -59,10 +59,18 @@ var retry = new Retry({
 });
 var failures = 0;
 
+function after(times, func) {
+  return function() {
+    if (--times < 1) {
+      return func.apply(this, arguments);
+    }
+  };
+};
+
 Autoupdate._retrySubscription = function () {
   Meteor.subscribe("meteor_autoupdate_clientVersions", {
     onError: function (error) {
-      Meteor._debug("autoupdate subscription failed:", error);
+      Meteor._debug("autoupdate subscription failed", error);
       failures++;
       retry.retryLater(failures, function () {
         // Just retry making the subscription, don't reload the whole
@@ -75,7 +83,6 @@ Autoupdate._retrySubscription = function () {
         Autoupdate._retrySubscription();
       });
     },
-
     onReady: function () {
       if (Package.reload) {
         var checkNewVersionDocument = function (doc) {

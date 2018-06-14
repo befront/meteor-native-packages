@@ -41,8 +41,9 @@ window.setTimeout(loadingCompleted);
  * @param {Function} func A function to run on startup.
  */
 Meteor.startup = function (callback) {
-  if (isReady)
+  if (isReady) {
     callback();
-  else
+  } else {
     callbackQueue.push(callback);
+  }
 };
