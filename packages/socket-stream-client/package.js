@@ -16,7 +16,7 @@ Package.onUse(function(api) {
   api.use("retry"); // TODO Try to remove this.
   api.use("dynamic-import");
 
-  api.addFiles("socket.io-1.7.2.js", "legacy");
+  api.addFiles("socket.io-1.7.2.js", "client");
   api.mainModule("browser.js", "client", { lazy: true });
 
   api.addFiles("server.js", "server");

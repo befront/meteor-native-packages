@@ -154,12 +154,18 @@ export class ClientStream extends StreamClientCommon {
   _launchConnection() {
     this._cleanup(); // cleanup the old socket, if there was one.
 
-    var sockjsUrl = toSockjsUrl(self.rawUrl).split("/");
+    var sockjsUrl = toSockjsUrl(this.rawUrl).split("/");
 
-    var options = _.extend({
-      transports: this._sockjsProtocolsWhitelist(),
-      path: "/" + sockjsUrl.pop()
-    }, this.options._sockjsOptions);
+    // var options = _.extend({
+    //   transports: this._sockjsProtocolsWhitelist(),
+    //   path: "/" + sockjsUrl.pop()
+    // }, this.options._sockjsOptions);
+
+    var options = {
+        transports: this._sockjsProtocolsWhitelist(),
+        path: "/" + sockjsUrl.pop(),
+        ...this.options._sockjsOptions
+    };
 
     this.socket = io(sockjsUrl.join("/"), options);
 
